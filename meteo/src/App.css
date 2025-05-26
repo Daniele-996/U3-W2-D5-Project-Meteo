@@ -8,15 +8,17 @@ body {
     linear-gradient(336deg, rgba(195, 183, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
 }
 
-#container {
-  min-height: 400px;
-}
-
 .imgCard {
   max-width: 50%;
   height: auto;
   margin-inline: auto;
   object-fit: cover;
+}
+
+#details {
+  max-width: 30%;
+  margin-inline: auto;
+  margin-block: 3rem;
 }
 
 .btn {
@@ -46,4 +48,5 @@ body {
 #footer {
   background-color: rgb(131, 123, 171);
   color: white;
+  margin-bottom: 0;
 }

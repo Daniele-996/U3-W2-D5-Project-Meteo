@@ -44,7 +44,7 @@ const Details = ({ lat, lon, city }) => {
 
   if (!lat || !lon) {
     return (
-      <Container>
+      <Container id="details">
         <p>Inserisci una località per vedere il meteo.</p>
       </Container>
     );
