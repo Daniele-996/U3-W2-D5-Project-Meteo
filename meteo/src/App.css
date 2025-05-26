@@ -1,0 +1,37 @@
+body {
+  background: linear-gradient(
+      217deg,
+      rgba(13, 0, 186, 0.908),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgb(154, 250, 255), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(195, 183, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+#container {
+  min-height: 400px;
+}
+
+.imgCard {
+  max-width: 50%;
+  height: auto;
+  margin-inline: auto;
+  object-fit: cover;
+}
+
+.cardToday {
+  background-color: rgba(196, 196, 196, 0.245);
+  max-width: 60%;
+  margin-inline: auto;
+}
+
+.cardNotToday {
+  background-color: rgba(196, 196, 196, 0.245);
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+#footer {
+  background-color: rgb(131, 123, 171);
+  color: white;
+}

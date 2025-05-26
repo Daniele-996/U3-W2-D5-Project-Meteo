@@ -50,7 +50,7 @@ const Details = ({ lat, lon, city }) => {
     );
   }
 
-  const moreDays = weatherData.filter(function (_, i) {
+  const previsionToday = weatherData.filter(function (_, i) {
     return i % 8 === 0;
   });
 
@@ -62,29 +62,30 @@ const Details = ({ lat, lon, city }) => {
           {isLoading && <p>Caricamento...</p>}
           {errorMsg && <p className="text-danger">{errorMsg}</p>}
 
-          {moreDays.length > 0 && (
-            <Card>
+          {previsionToday.length > 0 && (
+            <Card className="cardToday">
               <Card.Img
+                className="imgCard"
                 variant="top"
                 src={
                   "https://openweathermap.org/img/wn/" +
-                  moreDays[0].weather[0].icon +
+                  previsionToday[0].weather[0].icon +
                   "@2x.png"
                 }
-                alt={moreDays[0].weather[0].description}
+                alt={previsionToday[0].weather[0].description}
               />
               <Card.Body>
                 <Card.Title>{city || "Località sconosciuta"}</Card.Title>
                 <Card.Text>
-                  Data: {new Date(moreDays[0].dt * 1000).toLocaleString()}
+                  Data: {new Date(previsionToday[0].dt * 1000).toLocaleString()}
                   <br />
-                  Temp: {moreDays[0].main.temp} °C
+                  Temp: {previsionToday[0].main.temp} °C
                   <br />
-                  Meteo: {moreDays[0].weather[0].description}
+                  Meteo: {previsionToday[0].weather[0].description}
                   <br />
-                  Umidità: {moreDays[0].main.humidity}%
+                  Umidità: {previsionToday[0].main.humidity}%
                   <br />
-                  Vento: {moreDays[0].wind.speed} m/s
+                  Vento: {previsionToday[0].wind.speed} m/s
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -94,11 +95,12 @@ const Details = ({ lat, lon, city }) => {
         <Col>
           <h4>Prossimi giorni</h4>
           <Row className="g-3">
-            {moreDays.slice(1).map(function (f) {
+            {previsionToday.slice(1).map(function (f) {
               return (
                 <Col xs={12} sm={6} md={4} lg={3} key={f.dt}>
-                  <Card>
+                  <Card className="cardNotToday">
                     <Card.Img
+                      className="imgCard"
                       variant="top"
                       src={
                         "https://openweathermap.org/img/wn/" +

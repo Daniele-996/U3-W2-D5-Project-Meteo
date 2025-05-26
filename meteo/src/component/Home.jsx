@@ -35,8 +35,8 @@ const Home = ({ city, setCity, setLat, setLon, setGoToDetails }) => {
   };
 
   return (
-    <Container fluid>
-      <Row className="justify-content-center">
+    <Container fluid id="container">
+      <Row className="justify-content-center m-5">
         <Col xs={6}>
           <Form onSubmit={handleSubmit}>
             <Form.Label htmlFor="città">Cerca la tua città</Form.Label>
@@ -47,7 +47,7 @@ const Home = ({ city, setCity, setLat, setLon, setGoToDetails }) => {
               onChange={(e) => setCity(e.target.value)}
               aria-describedby="inserisciCittà"
             />
-            <Form.Text id="inserisciCittà" muted>
+            <Form.Text id="inserisciCittà" className="m-5" muted>
               Inserisci e ricerca la tua città! Tieniti aggiornato sul meteo!
             </Form.Text>
             <Button type="submit" className="m-3">
