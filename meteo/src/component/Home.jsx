@@ -30,13 +30,13 @@ const Home = ({ city, setCity, setLat, setLon, setGoToDetails }) => {
       setGoToDetails(true);
     } catch (error) {
       console.error("Errore:", error);
-      alert("Si è verificato un errore. Riprova più tardi.");
+      alert("Inserisci una città, per scoprire le previsioni meteo.");
     }
   };
 
   return (
     <Container fluid id="container">
-      <Row className="justify-content-center m-5">
+      <Row className="justify-content-center m-5 py-4">
         <Col xs={6}>
           <Form onSubmit={handleSubmit}>
             <Form.Label htmlFor="città">Cerca la tua città</Form.Label>
@@ -47,10 +47,10 @@ const Home = ({ city, setCity, setLat, setLon, setGoToDetails }) => {
               onChange={(e) => setCity(e.target.value)}
               aria-describedby="inserisciCittà"
             />
-            <Form.Text id="inserisciCittà" className="m-5" muted>
+            <Form.Text id="inserisciCittà" muted>
               Inserisci e ricerca la tua città! Tieniti aggiornato sul meteo!
             </Form.Text>
-            <Button type="submit" className="m-3">
+            <Button type="submit" className="btn">
               Cerca
             </Button>
           </Form>
